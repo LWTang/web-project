@@ -1,0 +1,15 @@
+/*textarea {
+  width: 600px;
+  border: 1px solid #0095dd;
+}*/
+
+.input, .output {
+  width: 90%;
+  height: 2em;
+  padding: 10px;
+  border: 1px solid #0095dd;
+}
+
+button {
+  padding: 10px 10px 10px 0;
+}
