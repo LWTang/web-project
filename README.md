@@ -10,4 +10,4 @@
 
 ### 表格
 包含在test-site3文件夹中，效果图：
-![](https://github.com/LWTang/web-project/raw/master/screenshots/muti-pages.jpg)
+![](https://github.com/LWTang/web-project/raw/master/screenshots/table.jpg)
