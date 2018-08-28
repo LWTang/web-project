@@ -7,3 +7,7 @@
 ### 多个html切换
 包含在muti-pages文件夹中，实现4个静态html页面切换，效果图：
 ![](https://github.com/LWTang/web-project/raw/master/screenshots/muti-pages.jpg)
+
+### 表格
+包含在test-site3文件夹中，效果图：
+![](https://github.com/LWTang/web-project/raw/master/screenshots/muti-pages.jpg)
