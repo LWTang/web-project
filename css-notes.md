@@ -1,14 +1,15 @@
 <h1>CSS-NOTES</h1>
-
+<style type="text/css"></style>
 > 目录
 
 * <a href="#pseudo-class">伪类</a>
 * <a href="#pseudo-element">伪元素</a>
 * <a href="#combinators">组合器和选择器组</a>
-* 值和单位
+* <a href="value-unit">值和单位</a>
   * <a href="#value">数值</a>
   * <a href="#percentage">百分比</a>
   * <a href="#color">颜色</a>
+* <a href="cascade">层叠</a>
 
 > 正文开始
 
@@ -372,5 +373,37 @@ p:nth-child(1) {
 p:nth-child(2) {
   background-color: rgb(255,0,0);
   opacity: 0.5;
+}
+```
+
+<hr>
+
+<h2 id="cascade">层叠</h2>
+样式的优先级：
+
+1. 重要性(importance):```!important```加在属性值后面，优先级最高。
+2. 专用性(specificity):ID/Class 选择器优于 element 选择器，ID 专用性高于 Class。
+3. 源代码次序(source order):源代码靠后的规则会覆盖较早的规则。
+
+```html
+<p class="better">This is a paragraph.</p>
+<p class="better" id="winning">One selector to rule them all!</p>
+```
+
+```css
+#winning {
+  background-color: red;
+  border: 1px solid black;
+}
+
+.better {
+  background-color: gray;
+  border: none !important;
+}
+
+p {
+  background-color: blue;
+  color: white;
+  padding: 5px;
 }
 ```
