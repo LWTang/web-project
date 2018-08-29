@@ -5,6 +5,10 @@
 * <a href="#pseudo-class">伪类</a>
 * <a href="#pseudo-element">伪元素</a>
 * <a href="#combinators">组合器和选择器组</a>
+* 值和单位
+  * <a href="#value">数值</a>
+  * <a href="#percentage">百分比</a>
+  * <a href="#color">颜色</a>
 
 > 正文开始
 
@@ -63,6 +67,8 @@ a:focus {
 <h2 id="combinators">组合器和选择器组</h2>
 
 * 疑问：A+B 和 A~B 有什么区别？
+  * A+B:A和B是兄弟结点，且B紧接着A
+  * A~B:A和B是兄弟结点，B只要在A后面就行
 <table>
   <thead>
     <tr>
@@ -183,5 +189,188 @@ table th + td {
 /* 定位在“with-currency”类中拥有属性lang并且这个属性值为fr的元素中的，最后td(:last-child)节点的后面（::after） */
 .with-currency[lang="fr"] td:last-child::after {
   content: ' €';
+}
+```
+
+* 应用同一规则的选择器组
+
+```html
+h1, h2, h3, h4, h5, h6 {
+  font-family: helvetica, 'sans serif';
+}
+```
+
+<h2 id="value-unit">值和单位</h2>
+<table>
+  <tr>
+    <th scope="row">数值</th>
+    <td>长度值，用于指定例如元素宽度、边框（border）宽度或字体大小；以及无单位整数，用于指定例如相对线宽或运行动画的次数。</td>
+  </tr>
+  <tr>
+    <th scope="row">百分比</th>
+    <td>可以用于指定尺寸或长度，例如取决于父容器的长度或高度，或默认的字体大小。</td>
+  </tr>
+  <tr>
+    <th scope="row">颜色</th>
+    <td>用于指定背景颜色，字体颜色等。</td>
+  </tr>
+  <tr>
+    <th scope="row">坐标位置</th>
+    <td>例如，以屏幕的左上角为坐标原点定位元素的位置。</td>
+  </tr>
+  <tr>
+    <th scope="row">函数</th>
+    <td>例如，用于指定背景图片或背景图片渐变。</td>
+  </tr>
+</table>
+
+<h3 id="value">数值</h3>
+
+```html
+<p>This is a paragraph.</p>
+<p>This is a paragraph.</p>
+<p>This is a paragraph.</p>
+```
+
+```css
+p {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid black;
+  background-color: cyan;
+}
+
+p:nth-child(1) {
+  width: 150px;
+  font-size: 18px;
+}
+
+p:nth-child(2) {
+  width: 250px;
+  font-size: 24px;
+}
+
+p:nth-child(3) {
+  width: 350px;
+  font-size: 30px;
+}
+```
+* 绝对单位
+  * 像素 (px) 是一种绝对单位（absolute units），因为无论其他相关的设置怎么变化，像素指定的值是不会变化的。
+  * 绝对单位还有 mm, cm, in: 毫米（Millimeters），厘米（centimeters），英寸（inches）
+
+* 相对单位（ 是相对于当前元素的字号(font-size)或者视口(viewport)尺寸 ）
+  * em:1em与当前元素的字体大小相同。对一个元素来说1em的计算值默认为16像素。em单位会继承父元素的字体大小，所以如果在父元素上设置了不同的字体大小，em的像素值就会变化，em是Web开发中最常用的相对单位。
+  * rem:总是等于默认基础字体大小的尺寸，继承的字体大小将不起作用。
+
+* 无单位的值
+```html
+margin: 0;
+```
+  * 动画的数值
+  ```html
+  <p>Hello</p>
+  ```
+
+```css
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+p {
+  color: red;
+  width: 100px;
+  font-size: 40px;
+  transform-origin: center;
+}
+
+p:hover {
+  animation-name: rotate;
+  animation-duration: 0.6s;
+  animation-timing-function: linear;
+  animation-iteration-count: 5;
+}
+```
+
+<h3 id="percentage">百分比</h3>
+
+```html
+<div>
+  <div class="boxes">Fixed width layout with pixels</div>
+  <div class="boxes">Liquid layout with percentages</div>
+</div>
+```
+
+```css
+div .boxes {
+  margin: 10px;
+  font-size: 200%;
+  color: white;
+  height: 150px;
+  border: 2px solid black;
+}
+
+.boxes:nth-child(1) {
+  background-color: red;
+  width: 650px;
+}
+
+.boxes:nth-child(2) {
+  background-color: blue;
+  width: 75%;
+}
+```
+
+<h3 id="color">颜色</h3>
+
+* RGB：3通道，3种表示方法：关键字(red、blue...); #ffeedd(256*256*256); rgb(0,0,255)
+* HSL：3个不同的值：色相、饱和度和明度值
+* RGBA 和 HSLA：RGBA和HSLA 不仅可以设置想要显示的颜色,还有此颜色的透明度（ transparency ）,0是完全透明的,1是完全不透明的。
+```html
+<p>This paragraph has a transparent red background</p>
+<p>This paragraph has a transparent blue background</p>
+```
+
+```css
+p {
+  height: 50px;
+  width: 350px;
+}
+
+/* Transparent red */
+p:nth-child(1) {
+  background-color: rgba(255,0,0,0.5);
+  position: relative;
+  top: 30px;
+  left: 50px;
+}
+
+/* Transparent blue */
+p:nth-child(2) {
+  background-color: hsla(240,100%,50%,0.5);
+}
+```
+* 还可以通过CSS的opacity属性来指定透明度。与设置某个特定颜色的透明度相比，这会设置所有选定元素以及它们的孩子节点的不透明度。
+```html
+<p>This paragraph is using RGBA for transparency</p>
+<p>This paragraph is using opacity for transparency</p>
+```
+
+```css
+/* Red with RGBA */
+p:nth-child(1) {
+  background-color: rgba(255,0,0,0.5);
+}
+
+/* Red with opacity */
+p:nth-child(2) {
+  background-color: rgb(255,0,0);
+  opacity: 0.5;
 }
 ```
