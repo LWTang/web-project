@@ -1,19 +1,15 @@
 <h1>CSS-NOTES</h1>
-<style>
-  a:hover {
-    color: red;
-  }
-</style>
+
 > 目录
 
-* <a href="#pseudo-class">伪类</a>
+* <a href="#pseudo-class" style="a:hover color:red;">伪类</a>
 * <a href="#pseudo-element">伪元素</a>
 * <a href="#combinators">组合器和选择器组</a>
 * <a href="value-unit">值和单位</a>
   * <a href="#value">数值</a>
   * <a href="#percentage">百分比</a>
   * <a href="#color">颜色</a>
-* <a href="cascade">层叠</a>
+* <a href="#cascade">层叠</a>
 
 > 正文开始
 
@@ -380,12 +376,12 @@ p:nth-child(2) {
 }
 ```
 
-<hr>
+<hr style="color: red;">
 
 <h2 id="cascade">层叠</h2>
 样式的优先级：
 
-1. 重要性(importance):```!important```加在属性值后面，优先级最高。
+1. 重要性(importance):```!important```加在属性值后面，优先级最高。**强烈建议不要使用**，因为改变了cascade正常工作方式。
 2. 专用性(specificity):ID/Class 选择器优于 element 选择器，ID 专用性高于 Class。
 3. 源代码次序(source order):源代码靠后的规则会覆盖较早的规则。
 
