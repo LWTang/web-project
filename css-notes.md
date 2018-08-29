@@ -2,7 +2,7 @@
 
 > 目录
 
-* <a href="#pseudo-class" style="a:hover color:red;">伪类</a>
+* <a href="#pseudo-class">伪类</a>
 * <a href="#pseudo-element">伪元素</a>
 * <a href="#combinators">组合器和选择器组</a>
 * <a href="value-unit">值和单位</a>
@@ -10,8 +10,10 @@
   * <a href="#percentage">百分比</a>
   * <a href="#color">颜色</a>
 * <a href="#cascade">层叠</a>
+  * <a href="#priority">优先级计算</a>
+* <a href="inherit">继承</a>
 
-> 正文开始
+> 正文
 
 <h2 id="pseudo-class">伪类</h2>
 
@@ -203,6 +205,9 @@ h1, h2, h3, h4, h5, h6 {
 
 <h2 id="value-unit">值和单位</h2>
 <table>
+  <colgroup>
+    <col style="width: 20px;">
+  </colgroup>
   <tr>
     <th scope="row">数值</th>
     <td>长度值，用于指定例如元素宽度、边框（border）宽度或字体大小；以及无单位整数，用于指定例如相对线宽或运行动画的次数。</td>
@@ -268,10 +273,10 @@ p:nth-child(3) {
 ```html
 margin: 0;
 ```
-  * 动画的数值
-  ```html
-  <p>Hello</p>
-  ```
+* 动画的数值
+```html
+<p>Hello</p>
+```
 
 ```css
 @keyframes rotate {
@@ -376,7 +381,7 @@ p:nth-child(2) {
 }
 ```
 
-<hr style="color: red;">
+<hr>
 
 <h2 id="cascade">层叠</h2>
 样式的优先级：
@@ -407,3 +412,130 @@ p {
   padding: 5px;
 }
 ```
+
+<h3 id="priority">优先级计算</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>选择器</th>
+      <th>千位</th>
+      <th>百位</th>
+      <th>十位</th>
+      <th>个位</th>
+      <th>合计值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>h1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0001</td>
+    </tr>
+    <tr>
+      <td>#id</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0100</td>
+    </tr>
+    <tr>
+      <td>h1 + p::first-letter</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0003</td>
+    </tr>
+    <tr>
+      <td>li > a[href*="zh-CN"] > .inline-warning</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0022</td>
+    </tr>
+    <tr>
+      <td>没有选择器, 规则在一个元素的 style 属性里</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1000</td>
+    </tr>
+  </tbody>
+</table>
+
+```html
+<div id="outer" class="container">
+  <div id="inner" class="container">
+    <ul>
+      <li class="nav"><a href="#">One</a></li>
+      <li class="nav"><a href="#">Two</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+```css
+/* specificity: 0101 */
+#outer a {
+  background-color: red;
+}
+
+/* specificity: 0201 */
+#outer #inner a {
+  background-color: blue;
+}
+
+/* specificity: 0104 */
+#outer div ul li a {
+  color: yellow;
+}
+
+/* specificity: 0113 */
+#outer div ul .nav a {
+  color: white;
+}
+
+/* specificity: 0024 */
+div div li:nth-child(2) a:hover {
+  border: 10px solid black;
+}
+
+/* specificity: 0023 */
+div li:nth-child(2) a:hover {
+  border: 10px dashed black;
+}
+
+/* specificity: 0033 */
+div div .nav:nth-child(2) a:hover {
+  border: 10px double black;
+}
+
+a {
+  display: inline-block;
+  line-height: 40px;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+```
+
+<hr>
+
+<h2 id="inherit">继承</h2>
