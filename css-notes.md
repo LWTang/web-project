@@ -205,10 +205,10 @@ h1, h2, h3, h4, h5, h6 {
 
 <h2 id="value-unit">值和单位</h2>
 <table>
-  <colgroup>
+<!--   <colgroup>
     <col style="width: 35px;">
     <col style="background-color: gray;color: white;">
-  </colgroup>
+  </colgroup> -->
   <tr>
     <th scope="row">数值</th>
     <td>长度值，用于指定例如元素宽度、边框（border）宽度或字体大小；以及无单位整数，用于指定例如相对线宽或运行动画的次数。</td>
