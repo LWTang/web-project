@@ -1,5 +1,9 @@
 <h1>CSS-NOTES</h1>
-<style type="text/css"></style>
+<style>
+  a:hover {
+    color: red;
+  }
+</style>
 > 目录
 
 * <a href="#pseudo-class">伪类</a>
