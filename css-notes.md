@@ -206,7 +206,7 @@ h1, h2, h3, h4, h5, h6 {
 <h2 id="value-unit">值和单位</h2>
 <table>
   <colgroup>
-    <col style="width: 20px;">
+    <col style="width: 35px;">
   </colgroup>
   <tr>
     <th scope="row">数值</th>
