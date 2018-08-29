@@ -5,13 +5,13 @@
 * <a href="#pseudo-class">伪类</a>
 * <a href="#pseudo-element">伪元素</a>
 * <a href="#combinators">组合器和选择器组</a>
-* <a href="value-unit">值和单位</a>
+* <a href="#value-unit">值和单位</a>
   * <a href="#value">数值</a>
   * <a href="#percentage">百分比</a>
   * <a href="#color">颜色</a>
 * <a href="#cascade">层叠</a>
   * <a href="#priority">优先级计算</a>
-* <a href="inherit">继承</a>
+* <a href="#inherit">继承</a>
 
 > 正文
 
@@ -540,3 +540,33 @@ li {
 <hr>
 
 <h2 id="inherit">继承</h2>
+
+* inherit:设置为与其父元素一样(想象成继承父类)
+* initial:设置为与浏览器默认样式表中该元素设置的值一样，如果没有，就设置为inherit(想象成初始化为默认)
+* unset:如果是自然继承的，就表现得像inherit，否则就设置为initial(想象成优先inherit，再initial)
+```html
+<ul>
+  <li>Default <a href="#">link</a> color</li>
+  <li class="inherit">Inherit the <a href="#">link</a> color</li>
+  <li class="initial">Reset the <a href="#">link</a> color</li>
+  <li class="unset">Unset the <a href="#">link</a> color</li>
+</ul>
+```
+
+```css
+body {
+  color: green;
+}
+
+.inherit a {
+  color: inherit;
+}
+
+.initial a {
+  color: initial
+}
+
+.unset a {
+  color: unset;
+}
+```
