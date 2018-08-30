@@ -2,19 +2,20 @@
 
 > 目录
 
-* <a href="#pseudo-class">伪类</a>
-* <a href="#pseudo-element">伪元素</a>
-* <a href="#combinators">组合器和选择器组</a>
-* <a href="#value-unit">值和单位</a>
-  * <a href="#value">数值</a>
-  * <a href="#percentage">百分比</a>
-  * <a href="#color">颜色</a>
-* <a href="#cascade">层叠</a>
-  * <a href="#priority">优先级计算</a>
-* <a href="#inherit">继承</a>
-* <a href="#box">框操作</a>
-  * <a href="#overflow">内容溢出</a>
-  * <a href="#box-type">框类型</a>
+* CSS基础
+  * <a href="#pseudo-class">伪类</a>
+  * <a href="#pseudo-element">伪元素</a>
+  * <a href="#combinators">组合器和选择器组</a>
+  * <a href="#value-unit">值和单位</a>
+    * <a href="#value">数值</a>
+    * <a href="#percentage">百分比</a>
+    * <a href="#color">颜色</a>
+  * <a href="#cascade">层叠</a>
+    * <a href="#priority">优先级计算</a>
+  * <a href="#inherit">继承</a>
+  * <a href="#box">框操作</a>
+    * <a href="#overflow">内容溢出</a>
+    * <a href="#box-type">框类型</a>
 
 > 正文
 
@@ -49,6 +50,8 @@ a:focus {
 }
 ```
 
+<hr>
+
 <h2 id="pseudo-element">伪元素</h2>
 
 * 伪元素(pseudo-element):前缀是两个冒号(::)，添加到选择器后面的关键字。
@@ -69,6 +72,8 @@ a:focus {
   content: '⤴';
 }
 ```
+
+<hr>
 
 <h2 id="combinators">组合器和选择器组</h2>
 
@@ -205,6 +210,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: helvetica, 'sans serif';
 }
 ```
+
+<hr>
 
 <h2 id="value-unit">值和单位</h2>
 <table>
@@ -573,6 +580,8 @@ body {
   color: unset;
 }
 ```
+
+<hr>
 
 <h2 id="box">框操作</h2>
 
