@@ -18,6 +18,11 @@
     * <a href="#box-type">框类型</a>
 * 文字样式
   * <a href="#font">字体</a>
+    * <a href="#font-stack">字体栈</a>
+    * <a href="#font-size">字体大小</a>
+    * <a href="#font-style">字体样式</a>
+    * <a href="#text-shadow">文字阴影</a>
+  * <a href="#text-layout">文本布局</a>
 
 > 正文
 
@@ -727,3 +732,77 @@ span {
     </tr>
   </tbody>
 </table>
+
+<h3 id="font-stack">字体栈</h3>
+
+* 浏览器从列表第一项开始，依次检查在当前机器中字体是否可用，有些字体名字不止一个单词，用引号括起来。一般在字体栈的最后放一个通用的字体。
+```css
+p {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+```
+
+<h3 id="font-size">字体大小</h3>
+
+1. px：绝对单位
+2. em：父元素大小的倍数
+3. rem：根元素大小的倍数
+
+* 通过属性```font-size```设置，元素的```font-size```属性是从父元素继承来的，所以一切都是从根元素```html```而来，浏览器的标准```font-size```设置值为```16px```。
+
+<h3 id="font-style">字体样式</h3>
+
+* ```font-style```：打开和关闭文本斜体，取值：
+  * normal：设置为普通字体(关闭斜体)。
+  * italic：设置为斜体，如果字体的斜体版本不可用，就利用oblique来模拟斜体。
+  * oblique：将普通文本倾斜的样式应用到文本中。
+* ```font-weight```：文字的粗体大小，取值：
+  * normal，bold：普通或者加粗
+  * lighter，bolder：设置得比父元素更细或更粗一步
+* ```text-transform```：设置要转换的字体，取值：
+  * none：防止任何转换
+  * uppercase：转为大写
+  * lowercase：转为小写
+  * capitalize：单词首字母大写
+  * full-width：转换为固定宽度的正方形
+* ```text-decoration```：设置/取消字体上的文本装饰(eg.取消链接的下划线)，可以一次接收多个值，取值：
+  * none：取消所有装饰
+  * underline：下划线
+  * overline：上划线
+  * line-through：穿过文本的线
+
+<h3 id="text-shadow">文字阴影</h3>
+
+```css
+text-shadow: 4px 4px 5px red;
+```
+4个属性：
+1. 水平偏移，必须指定
+2. 垂直偏移，必须指定
+3. 模糊半径，默认为0
+4. 阴影的基础颜色，默认为black
+可以用逗号分隔多个阴影值，应用到一个文本
+
+```css
+text-shadow: -1px -1px 1px #aaa,
+             0px 4px 1px rgba(0,0,0,0.5),
+             4px 4px 5px rgba(0,0,0,0.7),
+             0px 0px 7px rgba(0,0,0,0.4);
+```
+
+<h2 id="text-layout">文本布局</h2>
+
+* 文本对齐：```text-align```:left/right/center/justify(justify是两边对齐)
+* 行高：通常设置为无单位的值，这个值乘以```font-size```来获得行高。推荐的是1.5-2
+
+```css
+line-height: 1.5;
+```
+
+* 字母和单词间距：```letter-spacing```和```word-spacing```属性
+```css
+p::first-line {
+  letter-spacing: 2px;
+  word-spacing: 4px;
+}
+```
