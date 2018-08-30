@@ -1,42 +1,29 @@
-li[lang="en-GB"] {
-  background: url("http://mdn.github.io/learning-area/css/introduction-to-css/css-selectors/en-GB.png") 5px center no-repeat;
+/* General styles */
+body {
+  margin: 0;
 }
 
-li[data-perf="dec"] {
-  background: url("http://mdn.github.io/learning-area/css/introduction-to-css/css-selectors/de.png") 5px center no-repeat;
+#wrapper * {
+  padding: 20px;
+  font-size: 20px;
+  border: 20px solid rgba(0,0,0,0.5);
 }
 
-li[] {
-  background: url("http://mdn.github.io/learning-area/css/introduction-to-css/css-selectors/es.png") 5px center no-repeat;
+/* specific boxes */
+
+#wrapper header, #wrapper footer {
+  background-color: blue;
+  color: white;
 }
 
-li[] {
-  background-color: rgba(0,255,0,0.7);
+#wrapper main {
+  background-color: yellow;
 }
 
-li[] {
-  background-color: rgba(0,0,255,0.5);
+#wrapper header {
+
 }
 
-li[] {
-  background-color: rgba(255,0,0,0.7);
-}
+#wrapper footer {
 
-li[] {
-  font-weight: bold;
-}
-
-li[] {
-  font-style: italic;
-  color: #666;
-}
-
-ol {
-  padding: 0;
-}
-
-li {
-  padding: 3px 3px 3px 34px;
-  margin-bottom: 5px;
-  list-style-position: inside;
 }

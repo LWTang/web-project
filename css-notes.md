@@ -12,6 +12,9 @@
 * <a href="#cascade">层叠</a>
   * <a href="#priority">优先级计算</a>
 * <a href="#inherit">继承</a>
+* <a href="#box">框操作</a>
+  * <a href="#overflow">内容溢出</a>
+  * <a href="#box-type">框类型</a>
 
 > 正文
 
@@ -569,4 +572,104 @@ body {
 .unset a {
   color: unset;
 }
+```
+
+<h2 id="box">框操作</h2>
+
+* width, height：内容框的宽和高
+* border：边界属性，eg.40px solid green
+* padding：内边距，内容和边框之间的宽度
+* margin：外边距，兄弟结点之间的宽度，(外边距塌陷：取大的margin值，小的相当于0)
+
+<h3 id="overflow">内容溢出</h3>
+
+* auto：溢出的内容被隐藏，然后出现滚动条来让我们滚动查看所有的内容。
+* hidden：溢出的内容被隐藏
+* visible：溢出的内容被显示在盒子的外边（默认的）
+
+```html
+<p class="autoscroll">
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   Mauris tempus turpis id ante mollis dignissim. Nam sed
+   dolor non tortor lacinia lobortis id dapibus nunc. Praesent
+   iaculis tincidunt augue. Integer efficitur sem eget risus
+   cursus, ornare venenatis augue hendrerit. Praesent non elit
+   metus. Morbi vel sodales ligula.
+</p>
+
+<p class="clipped">
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   Mauris tempus turpis id ante mollis dignissim. Nam sed
+   dolor non tortor lacinia lobortis id dapibus nunc. Praesent
+   iaculis tincidunt augue. Integer efficitur sem eget risus
+   cursus, ornare venenatis augue hendrerit. Praesent non elit
+   metus. Morbi vel sodales ligula.
+</p>
+
+<p class="default">
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   Mauris tempus turpis id ante mollis dignissim. Nam sed
+   dolor non tortor lacinia lobortis id dapibus nunc. Praesent
+   iaculis tincidunt augue. Integer efficitur sem eget risus
+   cursus, ornare venenatis augue hendrerit. Praesent non elit
+   metus. Morbi vel sodales ligula.
+</p>
+```
+
+```css
+p {
+  width  : 400px;
+  height : 2.5em;
+  padding: 1em 1em 1em 1em;
+  border : 1px solid black;
+}
+
+.autoscroll { overflow: auto;    }
+.clipped    { overflow: hidden;  }
+.default    { overflow: visible; }
+```
+
+<h3 id="box-type">框类型</h3>
+
+* 块框(block box)：内容独占一行，可以设置宽和高
+* 行内框(inline box)：随文字出现，设置宽和高无效
+* 行内块状框(inline-block box)：不会另起一行，随文字出现，可以设置宽和高，不会再段落行中断开
+
+```html
+<p>
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   <span class="inline">Mauris tempus turpis id ante mollis dignissim.</span>
+   Nam sed dolor non tortor lacinia lobortis id dapibus nunc.
+</p>
+
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  <span class="block">Mauris tempus turpis id ante mollis dignissim.</span>
+  Nam sed dolor non tortor lacinia lobortis id dapibus nunc.
+</p>
+
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  <span class="inline-block">Mauris tempus turpis id ante mollis dignissim.</span>
+  Nam sed dolor non tortor lacinia lobortis id dapibus nunc.
+</p>
+```
+
+```css
+p {
+  padding : 1em;
+  border  : 1px solid black;
+}
+
+span {
+  padding : 0.5em;
+  border  : 1px solid green;
+
+  /* That makes the box visible, regardless of its type */
+  background-color: yellow;
+}
+
+.inline       { display: inline;       }
+.block        { display: block;        }
+.inline-block { display: inline-block; }
 ```
