@@ -17,7 +17,7 @@
     * <a href="#overflow">内容溢出</a>
     * <a href="#box-type">框类型</a>
 * 文字样式
-  * 
+  * <a href="#font">字体</a>
 
 > 正文
 
@@ -690,7 +690,7 @@ span {
 
 <h2 id="font">字体</h2>
 
-* 网页安全字体：只有几种字体可以应用到所有系统中，称作网页安全字体。
+* 网页安全字体：只有几种字体可以应用到所有系统中，称作网页安全字体。<a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/%E4%B8%BA%E6%96%87%E6%9C%AC%E6%B7%BB%E5%8A%A0%E6%A0%B7%E5%BC%8F/Fundamentals#%E5%AD%97%E4%BD%93%E7%A7%8D%E7%B1%BB">点击</a>
 <table>
   <thead>
     <tr>
