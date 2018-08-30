@@ -16,6 +16,8 @@
   * <a href="#box">框操作</a>
     * <a href="#overflow">内容溢出</a>
     * <a href="#box-type">框类型</a>
+* 文字样式
+  * 
 
 > 正文
 
@@ -682,3 +684,46 @@ span {
 .block        { display: block;        }
 .inline-block { display: inline-block; }
 ```
+
+<hr>
+<hr>
+
+<h2 id="font">字体</h2>
+
+* 网页安全字体：只有几种字体可以应用到所有系统中，称作网页安全字体。
+<table>
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>定义</th>
+      <th>实例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>```serif```</td>
+      <td>有衬线的字体 (在一些字体的结尾，你看到的那些华丽的和其他的细节)。</td>
+      <td style="font-family:serif;">My big red elephant</td>
+    </tr>
+    <tr>
+      <td>```sans-serif```</td>
+      <td>没有衬线的字体。</td>
+      <td style="font-family:sans-serif;">My big red elephant</td>
+    </tr>
+    <tr>
+      <td>```monospace```</td>
+      <td>每个字符具有相同宽度的字体，通常用于代码列表。</td>
+      <td style="font-family:monospace;">My big red elephant</td>
+    </tr>
+    <tr>
+      <td>```cursive```</td>
+      <td>用于模拟笔迹的字体，具有流动的连接笔画。</td>
+      <td style="font-family:cursive;">My big red elephant</td>
+    </tr>
+    <tr>
+      <td>```fantasy```</td>
+      <td>用来装饰的字体。</td>
+      <td style="font-family:fantasy;">My big red elephant</td>
+    </tr>
+  </tbody>
+</table>
