@@ -25,6 +25,7 @@
   * <a href="#text-layout">文本布局</a>
   * <a href="#list-style-type">列表样式</a>
   * <a href="#list-count">列表计数</a>
+  * <a href="#link">链接</a>
 
 > 正文
 
@@ -865,4 +866,47 @@ ol {
   <li value="6">Wash and chop the salad.</li>
   <li value="8">Fill pitta with salad, humous, and fried halloumi.</li>
 </ol>
+```
+
+<hr>
+
+<h2 id="link">链接</h2>
+
+* 每一个链接状态都可以用对应的伪类来应用样式：
+  * link(没有访问过的)：链接的默认状态。可以使用```:link```伪类来应用样式。
+  * visited：已经被访问过之后的状态。用:visited来应用样式。
+  * hover：鼠标悬停在链接上时的状态。用:hover来应用样式。
+  * active：链接被点击的时候的状态。用:active来应用样式。
+* 默认的样式：
+  * 链接具有下划线
+  * 未访问过的链接是蓝色的
+  * 访问过(visited)的是紫色的
+  * 激活(active)的时候链接变成红色
+* 设置链接样式的顺序：**L**o**V**e **F**ears **HA**te.
+```css
+/*这个顺序很重要，尝试交换hover和active的顺序后，active 就失效了*/
+a {
+
+}
+
+
+a:link {
+
+}
+
+a:visited {
+
+}
+
+a:focus {
+
+}
+
+a:hover {
+
+}
+
+a:active {
+
+}
 ```
