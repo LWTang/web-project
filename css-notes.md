@@ -23,6 +23,8 @@
     * <a href="#font-style">字体样式</a>
     * <a href="#text-shadow">文字阴影</a>
   * <a href="#text-layout">文本布局</a>
+  * <a href="#list-style-type">列表样式</a>
+  * <a href="#list-count">列表计数</a>
 
 > 正文
 
@@ -790,6 +792,8 @@ text-shadow: -1px -1px 1px #aaa,
              0px 0px 7px rgba(0,0,0,0.4);
 ```
 
+<hr>
+
 <h2 id="text-layout">文本布局</h2>
 
 * 文本对齐：```text-align```:left/right/center/justify(justify是两边对齐)
@@ -805,4 +809,60 @@ p::first-line {
   letter-spacing: 2px;
   word-spacing: 4px;
 }
+```
+
+<hr>
+
+<h2 id="list-style-type">列表样式</h2>
+
+* ```list-style-type```：设置项目符号的类型，例如无序列表的方形、圆形符号和有序列表的数字、字母、罗马数字。
+* ```list-style-position```：项目符号出现在列表内，还是列表外。
+* ```list-style-image```：项目符号使用自定义图片。
+
+```css
+/*有序列表上设置了大写罗马数字，list-style-position 默认值为 outside*/
+ol {
+  list-style-type: upper-roman;
+}
+```
+
+```css
+ol {
+  list-style-type: upper-roman;
+  list-style-position: inside;
+}
+```
+
+<hr>
+
+<h2 id="list-count">列表计数</h2>
+
+```html
+<!-- 从4开始计数 -->
+<ol start="4">
+  <li>Toast pitta, leave to cool, then slice down the edge.</li>
+  <li>Fry the halloumi in a shallow, non-stick pan, until browned on both sides.</li>
+  <li>Wash and chop the salad.</li>
+  <li>Fill pitta with salad, humous, and fried halloumi.</li>
+</ol>
+```
+
+```html
+<!-- 倒计数 -->
+<ol start="4" reversed>
+  <li>Toast pitta, leave to cool, then slice down the edge.</li>
+  <li>Fry the halloumi in a shallow, non-stick pan, until browned on both sides.</li>
+  <li>Wash and chop the salad.</li>
+  <li>Fill pitta with salad, humous, and fried halloumi.</li>
+</ol>
+```
+
+```html
+<!-- 指定列表项数值 -->
+<ol>
+  <li value="2">Toast pitta, leave to cool, then slice down the edge.</li>
+  <li value="4">Fry the halloumi in a shallow, non-stick pan, until browned on both sides.</li>
+  <li value="6">Wash and chop the salad.</li>
+  <li value="8">Fill pitta with salad, humous, and fried halloumi.</li>
+</ol>
 ```
