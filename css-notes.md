@@ -31,7 +31,7 @@
   * <a href="#background">背景</a>
     * <a href="#background-gradual">背景图像-渐变</a>
     * <a href="#radius">圆角</a>
-  * <a href="table">表格</a>
+  
 
 > 正文
 
@@ -1000,4 +1000,3 @@ border-radius: 20px;
 
 <hr>
 
-<h2 id="table">表格</h2>
