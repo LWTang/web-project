@@ -26,6 +26,12 @@
   * <a href="#list-style-type">列表样式</a>
   * <a href="#list-count">列表计数</a>
   * <a href="#link">链接</a>
+* 区块样式
+  * <a href="#box-more">盒子</a>
+  * <a href="#background">背景</a>
+    * <a href="#background-gradual">背景图像-渐变</a>
+    * <a href="#radius">圆角</a>
+  * <a href="table">表格</a>
 
 > 正文
 
@@ -909,3 +915,89 @@ a:active {
 
 }
 ```
+
+<hr>
+
+<h2 id="box-more">盒子</h2>
+
+* 一个盒子的总宽度是它的 width,padding-left,padding-right,border-left,border-right 属性之和，当想要把 width,height 设置为盒子的宽和高时，可以使用```box-sizing: border-box;```来实现。
+
+```html
+<div class="one"></div>
+<div class="two"></div>
+```
+
+```css
+html {
+  font-family: sans-serif;
+  background: #ccc;
+}
+
+.one, .two {
+  background: red;
+  width: 300px;
+  height: 150px;
+  padding: 20px;
+  border: 10px solid black;
+  margin: 20px auto;
+}
+
+.two {
+  box-sizing: border-box;
+}
+```
+
+* 盒子显示类型：display <a href="#box-type">属性</a>：```block```,```inline```,```inline-block```
+
+<hr>
+
+<h2 id="background">背景</h2>
+
+* ```background-color```:为背景设置一个纯色
+* ```background-image```:背景图像
+* ```background-position```:背景应该出现在元素背景中的位置
+  * px: background-position: 200px 25px
+  * rem: background-position: 20rem 2.5rem
+  * 百分比: background-position: 90% 25%
+  * 关键字: background-position: right center(前者left, center, right;后者top, center, bottom)
+* ```background-repeat```:背景图像怎样重复
+  * no-repeat:图像不会重复,它只会显示一次
+  * repeat-x:图像将在整个背景中水平地重复
+  * repeat-y:图像会在背景下垂直地重复
+  * repeat:图像将在整个背景中水平和竖直地重复
+* ```background-attachment```:内容滚动时，背景的行为
+  * scroll
+  * fixed
+  * local
+* ```background```:以上5个属性
+* ```background-size```:动态调整背景图片的大小
+
+```css
+p {
+  font-family: sans-serif;
+  padding: 20px;
+  /* background properties */
+  background-color: yellow;
+  background-image: url(https://mdn.mozillademos.org/files/13026/fire-ball-icon.png);
+  background-repeat: no-repeat;
+  background-position: 99% center;
+}
+```
+
+<h3 id="background-gradual">背景图像-渐变</h3>
+使用 linear-gradient() 函数
+
+```css
+/*向下渐变，从黄色开始，到橙色的40%，然后再回到黄色*/
+background-image: linear-gradient(to bottom, yellow, orange 40%, yellow);
+```
+
+<h3 id="radius">圆角</h3>
+
+```css
+border-radius: 20px;
+```
+
+<hr>
+
+<h2 id="table">表格</h2>
