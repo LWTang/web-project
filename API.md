@@ -1,0 +1,23 @@
+* text-align：
+  * left
+  * right
+  * center
+  * justify：两端对齐
+  * inherit
+* text-decoration：
+  * none
+  * underline
+  * overline
+  * line-through：穿过
+  * blink：闪烁的文本
+  * inherit：继承
+* text-indent：
+  * 20px：缩进20px
+  * %：父元素百分比
+  * inherit
+* text-transform：
+  * none
+  * capitalize：每个单词大写开头
+  * uppercase：全部大写
+  * lowercase：全部小写
+  * inherit：继承
