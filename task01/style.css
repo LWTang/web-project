@@ -16,13 +16,73 @@ img {
     border: 2px solid red;
 }
 
-
-
-div {
+.red {
     background-color: red;
     /* display: block; */
     padding: 20px;
     width: 960px;
     height: 200px;
     margin: 20px auto;
+}
+
+.div1 {
+    background-color: red;
+    width: 200px;
+    height: 50px;
+    float: left;
+}
+
+.div2 {
+    background-color: blue;
+    /* margin: 0 auto; */
+    height: 50px;
+    width: 50%;
+    /* float: right; */
+}
+
+.div3 {
+    margin-top: 3px;
+    background-color: yellow;
+}
+
+.whole {
+    background-color: red;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 50px;
+    overflow:hidden;
+}
+
+.flexbox {
+    background-color: blue;
+    width: 400px;
+    height: 300px;
+    margin: 10px 10px;
+    float: left;
+}
+
+.show {
+    font-size: 100px;
+    float: left;
+    width: 40%;
+    margin-left: 10px;
+}
+
+.show1 {
+    font-size: 100px;
+    float: right;
+    width: 40%;
+    /* margin-left: 5px; */
+}
+
+div p {
+    font-size: 25px;
+    color: white;
+    background-color: gray;
+    
+}
+
+div h2 {
+    font-size: 50px;
+    text-align: justify;
 }
