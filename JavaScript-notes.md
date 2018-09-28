@@ -22,7 +22,7 @@ alert(s); // s仍然为'Test'
 ```
 
 * toUpperCase
-```
+```javasCrIpt
 var s = 'hello world';
 s.toUpperCase();//返回‘HELLO WORLD’
 ```
