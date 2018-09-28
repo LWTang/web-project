@@ -1,3 +1,8 @@
+* clear：
+  * left：停止左浮动
+  * right
+  * both：停止左右浮动
+
 * text-align：
   * left
   * right
